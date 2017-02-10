@@ -4,23 +4,23 @@ public void setup()
 }
 public void draw()
 {
-  custFract(0, 0, 500);
+  custFract(20, 20, 500);
 }
 public void custFract(int x, int y, int len)
 {
- if(len <= 30)
+ if(len <= 50)
    {
-     rect(x, y, len, len);
+     ellipse(x, y, len, len);
    }
   else
    {
-    fill((int) (Math.random()*255), (int) (Math.random()*255), (int) (Math.random()*255));
-    custFract(x, y, len/2);  //top left
-    fill((int) (Math.random()*255), (int) (Math.random()*255), (int) (Math.random()*255));
-    custFract(x+(len/2), y+(len/2), len/2);  //bottom right
-    fill(255);
-    custFract(x, y+(len/2), len/2);//bottom left
-    fill(255);
-    custFract(x+(len/2), y, len/2);//top right
+    fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+    custFract(x+(len/4), y, len/2); //top
+    fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+    custFract(x+(len/4), y+(len/2), len/2); //bottom
+    fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+    custFract(x, y+(len/4), len/2);//left
+    fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+    custFract(x+len/2, y+(len/4), len/2);//right
    }
 }
